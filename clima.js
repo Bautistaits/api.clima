@@ -9,7 +9,7 @@ botonClima.onclick = function () {
   let fecha = fechaInput.value;
   if (!fecha) return alert('Seleccioná una fecha primero');
 
-  let url = https://archive-api.open-meteo.com/v1/archive?latitude=${latitud}&longitude=${longitud}&start_date=${fecha}&end_date=${fecha}&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,windspeed_10m_max&timezone=America/Argentina/Buenos_Aires;
+  let url = https//archive-api.open-meteo.com/v1/archive?latitude=${latitud}&longitude=${longitud}&start_date=${fecha}&end_date=${fecha}&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,windspeed_10m_max&timezone=America/Argentina/Buenos_Aires;
 
   fetch(url)
     .then(res => res.json())
