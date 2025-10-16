@@ -18,8 +18,9 @@ botonClima.onclick = function () {
     .then(geoRes => geoRes.json())
     .then(geoData => {
       if (!geoData.results || geoData.results.length === 0) {
+        
         resultado.innerHTML = "<p>No se encontró esa ciudad. Intentá con otra.</p>";
-        throw "Ciudad no encontrada"; 
+        return; 
       }
 
       let { latitude, longitude, name, country } = geoData.results[0];
@@ -46,8 +47,6 @@ botonClima.onclick = function () {
     })
     .catch(err => {
       console.error("Error:", err);
-      if (err !== "Ciudad no encontrada") {
-        resultado.innerHTML = "<p>Ocurrió un error al consultar el clima.</p>";
-      }
+      resultado.innerHTML = "<p>Ocurrió un error al consultar el clima.</p>";
     });
 };
